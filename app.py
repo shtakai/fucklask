@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import render_template
+
 app = Flask(__name__)
 
 
@@ -11,11 +13,10 @@ def home():
 def hell_there(name):
     from datetime import datetime
     now = datetime.now()
-    formatted_now = now.strftime("%A, %d %B, %Y at %X")
 
-    html_content = "<html><head><title>Hell, fucklask</title></head><body>"
-    html_content += "<strong>Hell there, " + name + "!</strong>. It's "
-    html_content += formatted_now
-    html_content += "</body></html>"
-
-    return html_content
+    return render_template(
+            "hell_there.html",
+            title="hell no",
+            message="Hell there, " + name + "!",
+            date=now.strftime("%A, %d %B, %Y at %X")
+            )
