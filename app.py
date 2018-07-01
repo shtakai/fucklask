@@ -6,7 +6,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hell fuck lask'
+    return render_template("home.html", title = "hell")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html", title = "hellabout")
+
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html", title = "contact ass")
 
 
 @app.route('/hell/<name>')
