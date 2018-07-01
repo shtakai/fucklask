@@ -20,3 +20,7 @@ def hell_there(name):
             message="Hell there, " + name + "!",
             date=now.strftime("%A, %d %B, %Y at %X")
             )
+
+@app.route('/api/data')
+def get_data():
+    return app.send_static_file('data.json')
