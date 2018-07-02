@@ -9,7 +9,7 @@ class BaseTestCase(TestCase):
     def test_render(self):
         response = self.client.get('/', content_type='html/txt')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'aHome page for fucked up page', response.data)
+        self.assertIn(b'Home page for fucked up page', response.data)
 
 if __name__ == '__main__':
     unittest.main()
