@@ -14,6 +14,11 @@ def welcome():
             name=random_name)
 
 
+@app.route('/title')
+def title():
+    return render_template('title.html')
+
+
 @app.route('/hi')
 def hi():
     return "fucked HI"
