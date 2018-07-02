@@ -4,7 +4,7 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route('/name')
+@app.route('/welcome')
 def welcome():
     return "Welcome to fucked up origin."
 
