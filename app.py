@@ -9,6 +9,28 @@ def welcome():
     return "Welcome to fucked up origin."
 
 
+@app.route('/hi')
+def hi():
+    return "fucked HI"
+
+
+@app.route('/bye')
+def bye():
+    return "bye"
+
+
+@app.route('/name/<person>')
+def say_name(person):
+    return f"The name is {person}"
+
+
+@app.route('/name/<int:num>')
+def favorite_number(num):
+    output = f"Your fucked up favorite number was {num}, "
+    output += f" which was half of {num * 2}"
+    return output
+
+
 @app.route('/')
 def home():
     return render_template("home.html", title="hell")
