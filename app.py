@@ -6,7 +6,12 @@ app = Flask(__name__)
 
 @app.route('/welcome')
 def welcome():
-    return "Welcome to fucked up origin."
+    names_of_fuckers = ["Sashimi", "Junta", "Hanneman"]
+    random_name = "Kim"
+    return render_template(
+            'welcome.html',
+            names=names_of_fuckers,
+            name=random_name)
 
 
 @app.route('/hi')
