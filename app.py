@@ -1,12 +1,34 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 
 app = Flask(__name__)
 
 
-@app.route('/name')
+@app.route('/welcome')
 def welcome():
-    return "Welcome to fucked up origin."
+    names_of_fuckers = ["Sashimi", "Junta", "Hanneman"]
+    random_name = "Kim"
+    return render_template(
+            'welcome.html',
+            names=names_of_fuckers,
+            name=random_name)
+
+
+@app.route('/show-form')
+def show_form():
+    return render_template('first-form.html')
+
+
+@app.route('/data')
+def print_name():
+    first = request.args.get('first')
+    last = request.args.get('last')
+    return f"You killed {first} {last}"
+
+
+@app.route('/title')
+def title():
+    return render_template('title.html')
 
 
 @app.route('/hi')

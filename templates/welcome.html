@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>weleome fuckers</title>
+</head>
+<body>
+  {% for fucker in names %}
+    <p>{{ fucker }}</p>
+  {% endfor %}
+
+  {% if name == 'Kim' %}
+    <p>Hell NO {{ name }}</p>
+  {% endif %}
+
+  Tired of this page? Creazed fucked up to <a href="{{url_for('title')}}">death</a>
+</body>
+</html>
