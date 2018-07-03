@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ title }} - Fuckalk</title>
+  {% if title %}
+    <title>{{ title }} - Fuckalk</title>
+  {% else %}
+    <title>Welcome HELL - Fuckalk</title>
+  {% endif %}
 </head>
 <body>
   <h1>Hell No. YES! HELL {{ user['username'] }}</h1>
