@@ -13,7 +13,7 @@ class BaseTestCase(TestCase):
     def test_render(self):
         response = self.client.get('/', content_type='html/txt')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Hell No, YES!', response.data)
+        self.assertIn(b'Hell No.', response.data)
 
 
 if __name__ == '__main__':
